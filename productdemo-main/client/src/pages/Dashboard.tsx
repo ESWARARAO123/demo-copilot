@@ -24,34 +24,22 @@ export default function Dashboard() {
       id: 1, 
       name: 'Active Users', 
       value: '1,234', 
-      change: '+12%', 
-      trend: 'up',
       icon: UsersIcon 
     },
     { 
       id: 2, 
       name: 'Chat Sessions', 
-      value: '856', 
-      change: '+24%', 
+      value: '856',  
       trend: 'up',
       icon: ChatBubbleLeftRightIcon 
     },
     { 
       id: 3, 
-      name: 'Server Load', 
-      value: '42%', 
-      change: '-5%', 
-      trend: 'down',
-      icon: ServerIcon 
-    },
-    { 
-      id: 4, 
-      name: 'Response Time', 
-      value: '120ms', 
-      change: '-8%', 
-      trend: 'down',
-      icon: ClockIcon 
+      name: 'All Users', 
+      value: '42', 
+      icon: UsersIcon 
     }
+    
   ];
 
   // Mock recent activities
@@ -88,18 +76,7 @@ export default function Dashboard() {
                 <stat.icon className="w-6 h-6" />
               </div>
             </div>
-            <div className="mt-4 flex items-center">
-              {stat.trend === 'up' ? (
-                <ArrowUpIcon className="w-4 h-4 text-platform-success mr-1" />
-              ) : (
-                <ArrowDownIcon className="w-4 h-4 text-platform-error mr-1" />
-              )}
-              <span className={`text-sm ${
-                stat.trend === 'up' ? 'text-platform-success' : 'text-platform-error'
-              }`}>
-                {stat.change} from last period
-              </span>
-            </div>
+            
           </div>
         ))}
       </div>
